@@ -33,7 +33,7 @@ Markdown reports are available in the numerical work. They are used when no comp
 
 ## Reports
 
-Reports can be found the PDF formatin the `PDF reports` folder. Additionally, HTML versions can be found in `Numerical Work/HTML reports`. Notebooks can also be found and ran directly in `Numerical Work`.
+Reports can be found in the PDF format inside the `PDF reports` folder. Additionally, HTML versions can be found in `Numerical Work/HTML reports`. Notebooks can also be found and ran directly in `Numerical Work`.
 
 Markdown files can be found in `HTML reports`.
 
