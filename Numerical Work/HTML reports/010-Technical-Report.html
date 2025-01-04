@@ -1,0 +1,535 @@
+<!DOCTYPE html><html><head>
+      <title>technical-report-task2and3</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////home/leo/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.8.14/crossnote/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<style>
+    * {
+        font-family: Times New Roman, sans-serif; /* Change the font family */
+        text-align: justify; /* Justifies the text */
+    }
+
+    .abstract {
+        width: 80%;
+        margin: 0 auto; /* Centers the div */
+    }
+
+    pre, code, code>span {
+        font-family: 'JetBrains Mono', monospace; /* Set the font to JetBrains Mono */
+
+    }
+
+    /* Ensure the title doesn't get numbered */
+.title {
+    counter-reset: none;  /* No numbering for title */
+}
+
+/* Initialize the counter after the first h1 (document title) */
+h1:not(.title) {
+    counter-reset: h2; /* Reset h2 counter when a new h1 starts */
+    margin-left: 0;
+    counter-increment: h1; /* Increment h1 counter */
+}
+
+h1:not(.title)::before {
+    content: counter(h1, upper-roman) ". "; /* Roman numeral (I., II., ...) */
+}
+
+/* For H2: Decimal with h1 (e.g., I.1) */
+h2 {
+    counter-reset: h3; /* Reset h3 counter when a new h2 starts */
+    margin-left: 0;
+}
+
+h2::before {
+    counter-increment: h2;
+    content: counter(h1, upper-roman) "." counter(h2) " "; /* I.1 */
+}
+
+/* For H3: Lowercase letters (e.g., I.1.a) */
+h3 {
+    counter-reset: h4; /* Reset h4 counter when a new h3 starts */
+    margin-left: 0;
+}
+
+h3::before {
+    counter-increment: h3;
+    content: counter(h1, upper-roman) "." counter(h2) "." counter(h3, lower-alpha) " "; /* I.1.a */
+}
+
+/* For H4: Lowercase roman numerals (e.g., I.1.a.i) */
+h4 {
+    counter-reset: h5; /* Reset h5 counter when a new h4 starts */
+    margin-left: 0;
+}
+
+h4::before {
+    counter-increment: h4;
+    content: counter(h1, upper-roman) "." counter(h2) "." counter(h3, lower-alpha) "." counter(h4, lower-roman) " "; /* I.1.a.i */
+}
+
+/* For H5: Decimal with all previous levels (e.g., I.1.a.i.1) */
+h5 {
+    margin-left: 0;
+}
+
+h5::before {
+    counter-increment: h5;
+    content: counter(h1, upper-roman) "." counter(h2) "." counter(h3, lower-alpha) "." counter(h4, lower-roman) "." counter(h5) " "; /* I.1.a.i.1 */
+}
+</style>
+<h1 style="text-align: center;" class="title">
+    Numerical Methods : <br>
+    Rate equations or MC approaches for modelling growth <br>
+    - Technical Report -
+</h1>
+<p style="text-align: center;">
+Léo BECHET, M2 CompuPhys 2024-2025
+</p>
+<div class="abstract">
+<p>The follwing is a technical report on the implementation of the simulation used in Tasks 2 and 3. It discusses the single-threaded implementation as well as the modifications added to obtain a parallelizable system. Evolution and switch of algorithms are discussed, namely Depth-First Search (DFS) and Union-Find algorithms.</p>
+</div>
+<h1 id="single-threaded-simulation">Single-Threaded Simulation </h1>
+<p>The current simulation spans up to task 3, with task 4 focusing on different objectives.</p>
+<h2 id="implementation-overview">Implementation Overview </h2>
+<p>The simulation is modeled on a discretized grid of size <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>×</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">N \times N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>, where each cell can either be empty or occupied by a monomer. Monomers are represented by instances of the <code>Monomer</code> class, which holds the necessary information for each cell, including properties such as type and aggregation status.</p>
+<h2 id="class-structure">Class Structure </h2>
+<h3 id="monomer-class"><code>Monomer</code> Class </h3>
+<p>The <code>Monomer</code> class defines the core object for monomers in the simulation. Each monomer has two primary attributes: <code>type</code> and <code>aggregated</code>. The type (either <code>"A"</code> or <code>"B"</code>) differentiates the monomers, and the <code>aggregated</code> property indicates whether a monomer has aggregated and thus is no longer allowed to move.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-class">class</span> <span class="token class-name">Monomer</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-def">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span><span class="token builtin">type</span> <span class="token operator">=</span> <span class="token builtin">type</span>
+        self<span class="token punctuation">.</span>aggregated <span class="token operator">=</span> <span class="token boolean">False</span>
+
+    <span class="token keyword keyword-def">def</span> <span class="token function">aggregate</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>aggregated <span class="token operator">=</span> <span class="token boolean">True</span>
+</code></pre><p>When a monomer is marked as aggregated using the <code>aggregate()</code> method, it becomes fixed, meaning it will not participate in further movement. This also serves to assist in counting the islands formed during the simulation.</p>
+<h3 id="simulation-class"><code>Simulation</code> Class </h3>
+<p>The <code>Simulation</code> class encapsulates the entire simulation process, including initialization and iteration through simulation steps.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-class">class</span> <span class="token class-name">Simulation</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-def">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> size<span class="token punctuation">,</span> ndif_ratio<span class="token punctuation">,</span> debug<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>debug <span class="token operator">=</span> debug
+        self<span class="token punctuation">.</span>size <span class="token operator">=</span> size
+        self<span class="token punctuation">.</span>ndif_ratio <span class="token operator">=</span> ndif_ratio
+        self<span class="token punctuation">.</span>stepNo <span class="token operator">=</span> <span class="token number">1</span>
+
+        <span class="token comment"># Initialize the grid as an array of objects</span>
+        self<span class="token punctuation">.</span>grid <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span>size<span class="token punctuation">,</span> dtype<span class="token operator">=</span><span class="token builtin">object</span><span class="token punctuation">)</span>
+
+        self<span class="token punctuation">.</span>indices <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword keyword-for">for</span> offset <span class="token keyword keyword-in">in</span> pass_offsets<span class="token punctuation">:</span>
+            i_offset<span class="token punctuation">,</span> j_offset <span class="token operator">=</span> offset
+            <span class="token keyword keyword-for">for</span> i <span class="token keyword keyword-in">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>i_offset<span class="token punctuation">,</span> size<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword keyword-for">for</span> j <span class="token keyword keyword-in">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>j_offset<span class="token punctuation">,</span> size<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">3</span> <span class="token operator">==</span> i_offset<span class="token punctuation">)</span> <span class="token keyword keyword-and">and</span> <span class="token punctuation">(</span>j <span class="token operator">%</span> <span class="token number">3</span> <span class="token operator">==</span> j_offset<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                        self<span class="token punctuation">.</span>indices<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre><ul>
+<li><strong><code>size</code></strong>: Tuple specifying the grid dimensions.</li>
+<li><strong><code>ndif_ratio</code></strong>: Ratio governing the diffusion coefficients along different axes.</li>
+<li><strong><code>debug</code></strong>: If set to <code>True</code>, enables debug printing for detailed information during simulation steps.</li>
+<li><strong><code>stepNo</code></strong>: Tracks the current step of the simulation.</li>
+<li><strong><code>grid</code></strong>: Initialized as an empty grid, where each cell will be filled with a monomer or left empty.</li>
+<li><strong><code>indices</code></strong>: Initialized as the list of offsets used when updating the simulation.</li>
+</ul>
+<h2 id="simulation-step-movement-and-aggregation">Simulation Step: Movement and Aggregation </h2>
+<p>The <code>Step()</code> function is responsible for iterating through the grid and updating the position of monomers that have not yet aggregated.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>self<span class="token punctuation">.</span>stepNo <span class="token operator">+=</span> <span class="token number">1</span>  <span class="token comment"># Increment step counter</span>
+<span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">,</span> cell <span class="token keyword keyword-in">in</span> np<span class="token punctuation">.</span>ndenumerate<span class="token punctuation">(</span>self<span class="token punctuation">.</span>grid<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-if">if</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>cell<span class="token punctuation">,</span> Monomer<span class="token punctuation">)</span> <span class="token keyword keyword-and">and</span> <span class="token keyword keyword-not">not</span> cell<span class="token punctuation">.</span>aggregated <span class="token keyword keyword-and">and</span> cell<span class="token punctuation">.</span>lastMoved <span class="token operator">!=</span> self<span class="token punctuation">.</span>stepNo<span class="token punctuation">:</span> 
+</code></pre><p>This loop iterates through each cell in the grid using <code>np.ndenumerate()</code>. The cell will only be processed if it contains a <code>Monomer</code>, the monomer is not aggregated, and it has not already moved during the current step. This ensures that no monomer moves more than once in a single step, a constraint that will later aid in parallelization.</p>
+<h3 id="movement-logic">Movement Logic </h3>
+<p>Movement is determined by selecting a random axis (<code>"i"</code> for rows or <code>"j"</code> for columns) and a direction (<code>-1</code> or <code>1</code>), which is controlled by the diffusion ratio <code>ndif_ratio</code>.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>axis <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>choice<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"i"</span><span class="token punctuation">,</span> <span class="token string">"j"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> p<span class="token operator">=</span><span class="token punctuation">[</span>self<span class="token punctuation">.</span>ndif_ratio<span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token operator">-</span>self<span class="token punctuation">.</span>ndif_ratio<span class="token punctuation">]</span><span class="token punctuation">)</span>
+value <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>choice<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre><p>A <code>match</code> statement is then used to perform the actual movement of the monomer along the selected axis.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-match">match</span> axis<span class="token punctuation">:</span>
+    <span class="token keyword keyword-case">case</span> <span class="token string">"i"</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>grid<span class="token punctuation">[</span>i<span class="token punctuation">,</span> j<span class="token punctuation">]</span><span class="token punctuation">.</span>moves <span class="token operator">-=</span> <span class="token number">1</span>
+        self<span class="token punctuation">.</span>grid<span class="token punctuation">[</span>i<span class="token punctuation">,</span> j<span class="token punctuation">]</span><span class="token punctuation">.</span>lastMoved <span class="token operator">=</span> self<span class="token punctuation">.</span>stepNo
+        self<span class="token punctuation">.</span>grid<span class="token punctuation">[</span>i <span class="token operator">+</span> value<span class="token punctuation">,</span> j<span class="token punctuation">]</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>grid<span class="token punctuation">[</span>i<span class="token punctuation">,</span> j<span class="token punctuation">]</span> <span class="token operator">=</span> self<span class="token punctuation">.</span>grid<span class="token punctuation">[</span>i<span class="token punctuation">,</span> j<span class="token punctuation">]</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>grid<span class="token punctuation">[</span>i <span class="token operator">+</span> value<span class="token punctuation">,</span> j<span class="token punctuation">]</span>
+        new_i<span class="token punctuation">,</span> new_j <span class="token operator">=</span> i <span class="token operator">+</span> value<span class="token punctuation">,</span> j
+
+    <span class="token keyword keyword-case">case</span> <span class="token string">"j"</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>grid<span class="token punctuation">[</span>i<span class="token punctuation">,</span> j<span class="token punctuation">]</span><span class="token punctuation">.</span>moves <span class="token operator">-=</span> <span class="token number">1</span>
+        self<span class="token punctuation">.</span>grid<span class="token punctuation">[</span>i<span class="token punctuation">,</span> j<span class="token punctuation">]</span><span class="token punctuation">.</span>lastMoved <span class="token operator">=</span> self<span class="token punctuation">.</span>stepNo
+        self<span class="token punctuation">.</span>grid<span class="token punctuation">[</span>i<span class="token punctuation">,</span> j <span class="token operator">+</span> value<span class="token punctuation">]</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>grid<span class="token punctuation">[</span>i<span class="token punctuation">,</span> j<span class="token punctuation">]</span> <span class="token operator">=</span> self<span class="token punctuation">.</span>grid<span class="token punctuation">[</span>i<span class="token punctuation">,</span> j<span class="token punctuation">]</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>grid<span class="token punctuation">[</span>i<span class="token punctuation">,</span> j <span class="token operator">+</span> value<span class="token punctuation">]</span>
+        new_i<span class="token punctuation">,</span> new_j <span class="token operator">=</span> i<span class="token punctuation">,</span> j <span class="token operator">+</span> value
+</code></pre><p>Depending on whether the chosen axis is <code>"i"</code> or <code>"j"</code>, the monomer will move up/down or left/right, respectively. The <code>moves</code> attribute ensures the movement count is reduced accordingly, and the monomer's <code>lastMoved</code> property is updated to the current step number.</p>
+<p>Note that the current simulation implementation simply does nothing if a cell tries to leave, meaning it will just stay in place.</p>
+<h3 id="aggregation">Aggregation </h3>
+<p>After the move, the algorithm checks if the neighboring cells (up, down, left, and right) contain monomers. If they do, both the current monomer and the neighbor are marked as aggregated.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-for">for</span> di<span class="token punctuation">,</span> dj <span class="token keyword keyword-in">in</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-try">try</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-if">if</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>grid<span class="token punctuation">[</span>new_i <span class="token operator">+</span> di<span class="token punctuation">,</span> new_j <span class="token operator">+</span> dj<span class="token punctuation">]</span><span class="token punctuation">,</span> Monomer<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>grid<span class="token punctuation">[</span>new_i<span class="token punctuation">,</span> new_j<span class="token punctuation">]</span><span class="token punctuation">.</span>aggregate<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            self<span class="token punctuation">.</span>grid<span class="token punctuation">[</span>new_i <span class="token operator">+</span> di<span class="token punctuation">,</span> new_j <span class="token operator">+</span> dj<span class="token punctuation">]</span><span class="token punctuation">.</span>aggregate<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-except">except</span> IndexError<span class="token punctuation">:</span>
+        <span class="token keyword keyword-pass">pass</span>  <span class="token comment"># Handle out-of-bounds cells</span>
+</code></pre><p>This aggregation check is done in all four cardinal directions, ensuring that monomers that come into contact aggregate, preventing further movement.</p>
+<h2 id="deposition">Deposition </h2>
+<p>The <code>deposition</code> function randomly places monomers within a specified area on the grid. If no specific center or side lengths are provided, the function defaults to using the entire grid.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-if">if</span> x_center <span class="token keyword keyword-is">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    x_center <span class="token operator">=</span> self<span class="token punctuation">.</span>grid<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">/</span> <span class="token number">2</span>
+<span class="token keyword keyword-if">if</span> y_center <span class="token keyword keyword-is">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    y_center <span class="token operator">=</span> self<span class="token punctuation">.</span>grid<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">/</span> <span class="token number">2</span>
+
+<span class="token comment"># Set default side lengths if not provided</span>
+<span class="token keyword keyword-if">if</span> x_side <span class="token keyword keyword-is">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    x_side <span class="token operator">=</span> self<span class="token punctuation">.</span>grid<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token keyword keyword-if">if</span> y_side <span class="token keyword keyword-is">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    y_side <span class="token operator">=</span> self<span class="token punctuation">.</span>grid<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+<span class="token comment"># Choose random position within the specified area</span>
+i <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> x_side <span class="token operator">+</span> x_center <span class="token operator">-</span> x_side <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span>
+j <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> y_side <span class="token operator">+</span> y_center <span class="token operator">-</span> y_side <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Place a monomer of the specified type</span>
+self<span class="token punctuation">.</span>grid<span class="token punctuation">[</span>i<span class="token punctuation">,</span> j<span class="token punctuation">]</span> <span class="token operator">=</span> Monomer<span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">)</span>
+</code></pre><p>The <code>deposition</code> method selects random grid coordinates based on the provided <code>x_center</code>, <code>y_center</code>, <code>x_side</code>, and <code>y_side</code> values, and places a <code>Monomer</code> at the chosen position.</p>
+<hr>
+<h1 id="multi-threaded-simulation">Multi-Threaded Simulation </h1>
+<h3 id="multi-threaded-vs-single-threaded-simulation">Multi-threaded vs Single-threaded Simulation </h3>
+<p>The transition from a single-threaded to a multi-threaded simulation introduces several new challenges, particularly in terms of <strong>thread safety</strong> and <strong>data integrity</strong>. In a single-threaded simulation, updating each cell is a sequential process, ensuring that only one cell is modified at any given time. However, in a multi-threaded simulation, where different parts of the grid may be processed concurrently, ensuring that two or more threads do not update the same or nearby cells simultaneously is crucial.</p>
+<p>In the single-threaded approach, the simulation iterates over each cell using a double loop. Each cell is only updated if it is not aggregated and has not been moved during the current step. The axis and direction for movement are chosen randomly using probabilities skewed by the diffusion ratio (<code>ndif_ratio</code>), and neighboring cells are checked to determine whether aggregation occurs.</p>
+<p>However, when optimizing with Numba, certain Python objects are not supported, which necessitates a workaround in representing the simulation's state. Instead of using objects to denote the different states of the cells, we utilize a numerical encoding scheme: <code>0</code> represents empty cells, <code>1</code>, <code>2</code>, and <code>3</code> represent the non-aggregated states of objects A, B, and C respectively, while <code>11</code>, <code>12</code>, and <code>13</code> are used to denote the aggregated states of these objects. This encoding allows for efficient computation while maintaining clarity in representing the different states of the grid cells.</p>
+<h4 id="difficulties-encountered-in-multi-threading">Difficulties Encountered in Multi-threading </h4>
+<p>Multi-threading, by design, aims to divide computational tasks across multiple cores, but this can lead to several problems:</p>
+<ul>
+<li><strong>Concurrent updates</strong>: If two threads attempt to update neighboring cells simultaneously, it can lead to race conditions, resulting in inconsistent states.</li>
+<li><strong>Thread safety</strong>: Ensuring that a cell is not updated more than once by different threads during the same pass is crucial.</li>
+</ul>
+<p>The solution adopted for these problems was to divide the grid into separate <strong>update zones</strong>, ensuring that cells being updated in one pass do not interfere with each other. Specifically, the grid was divided into a <strong>3x3 update scheme</strong>.</p>
+<h3 id="3x3-update-grid-nine-pass-strategy">3x3 Update Grid: Nine-Pass Strategy </h3>
+<p>To ensure thread safety, the grid is divided into smaller groups that are updated in <strong>nine distinct passes</strong>. Each pass targets a specific subset of cells, ensuring that no neighboring cells are updated during the same pass. Here's the reasoning behind the 3x3 division:</p>
+<ul>
+<li><strong>Neighbor checking</strong>: Each cell checks its neighbors (left, right, above, and below) to determine if aggregation should occur. This means that an update requires a look at a <strong>radius of 1</strong> from the cell.</li>
+<li>To prevent any two cells within this radius from being updated in the same pass, a <strong>3x3 grid</strong> division was adopted, where each pass updates cells that are 2 cells apart, ensuring thread safety.</li>
+</ul>
+<p>The diagram below illustrates how the 3x3 grid strategy divides the updates:</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Grid layout:
++---+---+---+
+| A | B | C |
++---+---+---+
+| D | E | F |
++---+---+---+
+| G | H | I |
++---+---+---+
+
+- Pass 1 updates cells in A (Top-left)
+- Pass 2 updates cells in B (Top-center)
+- Pass 3 updates cells in C (Top-right)
+- Pass 4 updates cells in D (Center-left)
+- Pass 5 updates cells in E (Center)
+- Pass 6 updates cells in F (Center-right)
+- Pass 7 updates cells in G (Bottom-left)
+- Pass 8 updates cells in H (Bottom-center)
+- Pass 9 updates cells in I (Bottom-right)
+</code></pre><p>Each pass only updates cells located at a particular offset within the grid, ensuring that no neighboring cells are updated at the same time. This approach prevents conflicts between threads when updating cells in parallel.</p>
+<h3 id="2x3-division-optimizing-the-passes">2x3 Division: Optimizing the Passes </h3>
+<p>While the 3x3 grid ensures thread safety by maintaining a sufficient distance between concurrently updated cells, we believe it's possible to optimize further by reducing the number of passes to <strong>6 passes</strong> using a <strong>2x3 division</strong>. This would involve strategically interlacing the update zones while maintaining the necessary spacing between the cells being updated simultaneously. This reduction in passes could lead to performance improvements, as it would lessen the overhead associated with managing 9 passes.</p>
+<h4 id="6-pass-grid-layout-hypothetical-optimization">6-Pass Grid Layout (Hypothetical Optimization) </h4>
+<p>The idea is to shift rows by offsets, which could potentially reduce the number of passes from 9 to 6. This would still respect the necessary distance between updated cells to avoid conflicts, improving computational efficiency.</p>
+<h4 id="5-pass-theory">5-Pass Theory </h4>
+<p>In theory, it's possible to further reduce the number of passes to <strong>5 passes</strong>. This would rely on a more advanced approach that takes into account the fact that each cell update involves <strong>5 cells</strong> (the cell itself and its four neighboring cells). If we can find a pattern where these updates don't overlap, this would result in even faster execution. However, this remains speculative as we haven't yet identified such a pattern.</p>
+<p>When increasing the number of passes, fewer cells are updated simultaneously, which could balance the load across the processing cores. This can be beneficial in scenarios with larger simulations, where the number of active threads could be lower. In systems with a high number of cores, such as GPUs, this means that increasing the grid size might not increase the overall computation time.</p>
+<h3 id="axis-and-direction-selection-enhancing-readability">Axis and Direction Selection: Enhancing Readability </h3>
+<p>The choice of <strong>axis</strong> (whether the monomer moves along the x or y-axis) and <strong>direction</strong> (positive or negative) is done using random selection, with a probability weighted by the <code>ndif_ratio</code>. The new code separates axis selection from the move direction, improving readability. The use of random choices for both axis and direction has been simplified:</p>
+<pre data-role="codeBlock" data-info="PYTHON" class="language-python PYTHON"><code><span class="token comment"># Random axis selection using np.random.rand()</span>
+<span class="token keyword keyword-if">if</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> ndif_ratio<span class="token punctuation">:</span>  <span class="token comment"># 0 for x-axis</span>
+    axis <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword keyword-else">else</span><span class="token punctuation">:</span>
+    axis <span class="token operator">=</span> <span class="token number">1</span>
+
+<span class="token comment"># Random direction</span>
+value <span class="token operator">=</span> <span class="token number">1</span> <span class="token keyword keyword-if">if</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0.5</span> <span class="token keyword keyword-else">else</span> <span class="token operator">-</span><span class="token number">1</span>
+</code></pre><p>This structure allows for easier understanding and maintenance of the code, compared to more complex in-line random operations.</p>
+<h3 id="precomputed-indices-and-parallelization">Precomputed Indices and Parallelization </h3>
+<p>In the current implementation, the indices for each pass are precomputed before the simulation step begins. This ensures that the parallel loop can efficiently iterate over the relevant cells without needing to recalculate indices on every iteration.</p>
+<p>The use of <code>prange</code> allows us to loop over these precomputed indices in parallel:</p>
+<pre data-role="codeBlock" data-info="PYTHON" class="language-python PYTHON"><code><span class="token comment"># Parallel loop over the precomputed indices</span>
+<span class="token keyword keyword-for">for</span> index <span class="token keyword keyword-in">in</span> prange<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>indices<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    i<span class="token punctuation">,</span> j <span class="token operator">=</span> indices<span class="token punctuation">[</span>index<span class="token punctuation">]</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre><p>Although we could <strong>cache</strong> the precomputed indices across multiple steps to improve performance, this was avoided for the sake of code clarity and maintainability. For small to medium simulations, the overhead of precomputing the indices is negligible compared to the overall simulation time.</p>
+<h3 id="conclusion">Conclusion </h3>
+<p>The multi-threaded implementation leverages Numba's <code>@njit(parallel=True)</code> decorator to achieve parallelism across grid cells. By adopting a 3x3 grid division, thread safety is ensured, preventing race conditions when updating neighboring cells. Future optimizations, such as reducing the number of passes, offer promising directions for further improving the performance of the simulation.</p>
+<hr>
+<h2 id="side-functions">Side functions </h2>
+<p>This section describes functions which are not part of the simulation itself but help in gathering information about it.</p>
+<h3 id="counting-free-monomers-function-nummonomers">Counting free Monomers function <code>NumMonomers</code> </h3>
+<pre data-role="codeBlock" data-info="PYTHON" class="language-python PYTHON"><code><span class="token keyword keyword-def">def</span> <span class="token function">NumMonomers</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># Clone of the grid, could use true/false instead of strings but oh well</span>
+    grid <span class="token operator">=</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword keyword-if">if</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token keyword keyword-or">or</span> x <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword keyword-or">or</span> <span class="token builtin">getattr</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token string">'aggregated'</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">)</span> <span class="token keyword keyword-else">else</span> <span class="token number">1</span> <span class="token keyword keyword-for">for</span> x <span class="token keyword keyword-in">in</span> row<span class="token punctuation">]</span>
+                <span class="token keyword keyword-for">for</span> row <span class="token keyword keyword-in">in</span> self<span class="token punctuation">.</span>grid
+            <span class="token punctuation">]</span>
+    <span class="token keyword keyword-return">return</span> np<span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span>grid<span class="token punctuation">)</span>
+</code></pre><p>We check the number of free monomers by first recreating the grid and replacing non-aggregated <code>Monomers</code> by <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> and other cells with <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>. A simple sum is done, which returns the number of free monomers in the simulation.</p>
+<h3 id="counting-free-monomers-in-parallel-num_monomers_parallel">Counting Free Monomers <em>in Parallel</em>: <code>num_monomers_parallel</code> </h3>
+<pre data-role="codeBlock" data-info="PYTHON" class="language-python PYTHON"><code><span class="token decorator annotation punctuation">@njit</span><span class="token punctuation">(</span>parallel<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">num_monomers_parallel</span><span class="token punctuation">(</span>grid<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    count <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword keyword-for">for</span> r <span class="token keyword keyword-in">in</span> prange<span class="token punctuation">(</span>grid<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-for">for</span> cell <span class="token keyword keyword-in">in</span> grid<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token keyword keyword-if">if</span> cell <span class="token keyword keyword-in">in</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># Count only non-aggregated monomers</span>
+                count <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword keyword-return">return</span> count
+</code></pre><p>In the parallel version of the <code>NumMonomers</code> function, the grid is processed concurrently using Numba's <code>prange</code> to parallelize the outer loop. Instead of reconstructing a grid and replacing non-aggregated <code>Monomers</code> with integers (as done in the single-threaded approach), this version directly counts cells that are either <code>1</code> or <code>2</code>, which represent non-aggregated monomers. By leveraging parallelism, we can efficiently handle larger grid sizes and speed up the counting process.</p>
+<p>In comparison, the single-threaded version involved a grid transformation, which adds a small overhead, whereas the multithreaded version directly inspects each cell of the original grid without extra steps. This parallel approach is particularly beneficial in large simulations where the workload can be distributed across multiple cores, significantly reducing computation time. However, as with any multithreaded approach, care must be taken to ensure correct handling of concurrent operations, although in this case, counting operations on non-aggregated cells remain thread-safe.</p>
+<h3 id="numislands-function-explanation"><code>NumIslands</code> Function Explanation </h3>
+<p>The <code>NumIslands</code> function is designed to count the number of "islands" in a grid and return the number of islands along with the size of each one in terms of the number of cells. The function interprets a grid where cells are either land (<code>'1'</code>) or water (<code>'0'</code>). Here’s a step-by-step explanation:</p>
+<h4 id="1-grid-construction">1. Grid Construction </h4>
+<p>The grid is cloned and transformed such that land cells are <code>'1'</code> and water cells are <code>'0'</code>. This transformation is applied based on the properties of the elements in <code>self.grid</code>, where a cell that is either a string, zero, or has no <code>aggregated</code> attribute is considered water (<code>'0'</code>). Otherwise, it is treated as land (<code>'1'</code>).</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>grid <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">[</span><span class="token string">'0'</span> <span class="token keyword keyword-if">if</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token keyword keyword-or">or</span> x <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword keyword-or">or</span> <span class="token keyword keyword-not">not</span> <span class="token builtin">getattr</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token string">'aggregated'</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">)</span> <span class="token keyword keyword-else">else</span> <span class="token string">'1'</span> <span class="token keyword keyword-for">for</span> x <span class="token keyword keyword-in">in</span> row<span class="token punctuation">]</span>
+    <span class="token keyword keyword-for">for</span> row <span class="token keyword keyword-in">in</span> self<span class="token punctuation">.</span>grid
+<span class="token punctuation">]</span>
+</code></pre><h4 id="2-dfs-depth-first-search-setup">2. DFS (Depth First Search) Setup </h4>
+<p>The DFS function, <code>dfs(r, c)</code>, is used to explore the grid from a specific cell. It works recursively to visit all connected land cells (cells adjacent up, down, left, or right). If the DFS encounters a water cell (<code>'0'</code>) or goes out of bounds, it returns <code>1</code>. Each visited land cell is marked as water (<code>'0'</code>) to prevent it from being visited again, essentially "erasing" the island as it is explored.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-def">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>r<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># Boundary and check if it's land</span>
+    <span class="token keyword keyword-if">if</span> r <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token keyword keyword-or">or</span> c <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token keyword keyword-or">or</span> r <span class="token operator">&gt;=</span> rows <span class="token keyword keyword-or">or</span> c <span class="token operator">&gt;=</span> cols <span class="token keyword keyword-or">or</span> grid<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">[</span>c<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'0'</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> <span class="token number">1</span>
+
+    <span class="token comment"># Mark the land as visited by setting it to '0'</span>
+    grid<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">[</span>c<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'0'</span>
+    
+    s <span class="token operator">=</span> <span class="token number">0</span>  <span class="token comment"># Counter for cell number</span>
+    
+    <span class="token comment"># Visit all adjacent cells (up, down, left, right)</span>
+    s <span class="token operator">+=</span> dfs<span class="token punctuation">(</span>r <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> c<span class="token punctuation">)</span>  <span class="token comment"># down</span>
+    s <span class="token operator">+=</span> dfs<span class="token punctuation">(</span>r <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> c<span class="token punctuation">)</span>  <span class="token comment"># up</span>
+    s <span class="token operator">+=</span> dfs<span class="token punctuation">(</span>r<span class="token punctuation">,</span> c <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># right</span>
+    s <span class="token operator">+=</span> dfs<span class="token punctuation">(</span>r<span class="token punctuation">,</span> c <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># left</span>
+    <span class="token keyword keyword-return">return</span> s
+</code></pre><h4 id="3-main-loop">3. Main Loop </h4>
+<p>The grid is traversed row by row. Whenever an unvisited land cell (<code>'1'</code>) is found, a new island is discovered. The DFS is triggered, and its result, which indicates the size of the island, is added to the <code>cells_per_island</code> list. After the DFS finishes for an island, the <code>island_count</code> is incremented by one.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-for">for</span> r <span class="token keyword keyword-in">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>rows<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-for">for</span> c <span class="token keyword keyword-in">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>cols<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># Start a DFS if we find an unvisited land cell</span>
+        <span class="token keyword keyword-if">if</span> grid<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">[</span>c<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'1'</span><span class="token punctuation">:</span>
+            cells_per_island<span class="token punctuation">.</span>append<span class="token punctuation">(</span>dfs<span class="token punctuation">(</span>r<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            island_count <span class="token operator">+=</span> <span class="token number">1</span>  <span class="token comment"># Increase the island count after finishing the DFS</span>
+</code></pre><h4 id="4-return">4. Return </h4>
+<p>The function returns two values: the total number of islands (<code>island_count</code>) and a list (<code>cells_per_island</code>) containing the number of cells in each island.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-return">return</span> island_count<span class="token punctuation">,</span> cells_per_island
+</code></pre><h3 id="num_islands_parallel-counting-islands-in-parallel"><code>num_islands_parallel</code>: Counting Islands in Parallel </h3>
+<pre data-role="codeBlock" data-info="PYTHON" class="language-python PYTHON"><code><span class="token decorator annotation punctuation">@njit</span><span class="token punctuation">(</span>parallel<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">num_islands_parallel</span><span class="token punctuation">(</span>grid<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    rows<span class="token punctuation">,</span> cols <span class="token operator">=</span> grid<span class="token punctuation">.</span>shape
+    parent <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span>rows <span class="token operator">*</span> cols<span class="token punctuation">)</span>  <span class="token comment"># Each cell is its own parent</span>
+    size <span class="token operator">=</span> np<span class="token punctuation">.</span>ones<span class="token punctuation">(</span>rows <span class="token operator">*</span> cols<span class="token punctuation">,</span> dtype<span class="token operator">=</span>np<span class="token punctuation">.</span>int32<span class="token punctuation">)</span>  <span class="token comment"># Initialize sizes to 1</span>
+    rank <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span>rows <span class="token operator">*</span> cols<span class="token punctuation">,</span> dtype<span class="token operator">=</span>np<span class="token punctuation">.</span>int32<span class="token punctuation">)</span>
+
+    <span class="token comment"># Iterate over the grid to perform union operations</span>
+    <span class="token keyword keyword-for">for</span> r <span class="token keyword keyword-in">in</span> prange<span class="token punctuation">(</span>rows<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-for">for</span> c <span class="token keyword keyword-in">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>cols<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword keyword-if">if</span> grid<span class="token punctuation">[</span>r<span class="token punctuation">,</span> c<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                <span class="token keyword keyword-if">if</span> r <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">&lt;</span> rows <span class="token keyword keyword-and">and</span> grid<span class="token punctuation">[</span>r <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> c<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                    union<span class="token punctuation">(</span>parent<span class="token punctuation">,</span> size<span class="token punctuation">,</span> rank<span class="token punctuation">,</span> r <span class="token operator">*</span> cols <span class="token operator">+</span> c<span class="token punctuation">,</span> <span class="token punctuation">(</span>r <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> cols <span class="token operator">+</span> c<span class="token punctuation">)</span>
+                <span class="token keyword keyword-if">if</span> c <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">&lt;</span> cols <span class="token keyword keyword-and">and</span> grid<span class="token punctuation">[</span>r<span class="token punctuation">,</span> c <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                    union<span class="token punctuation">(</span>parent<span class="token punctuation">,</span> size<span class="token punctuation">,</span> rank<span class="token punctuation">,</span> r <span class="token operator">*</span> cols <span class="token operator">+</span> c<span class="token punctuation">,</span> r <span class="token operator">*</span> cols <span class="token operator">+</span> <span class="token punctuation">(</span>c <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># Count distinct roots (islands) and their sizes</span>
+    root_set <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    island_sizes <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    
+    <span class="token keyword keyword-for">for</span> r <span class="token keyword keyword-in">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>rows<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-for">for</span> c <span class="token keyword keyword-in">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>cols<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword keyword-if">if</span> grid<span class="token punctuation">[</span>r<span class="token punctuation">,</span> c<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                root <span class="token operator">=</span> find<span class="token punctuation">(</span>parent<span class="token punctuation">,</span> r <span class="token operator">*</span> cols <span class="token operator">+</span> c<span class="token punctuation">)</span>
+                root_set<span class="token punctuation">.</span>add<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+                <span class="token keyword keyword-if">if</span> root <span class="token keyword keyword-in">in</span> island_sizes<span class="token punctuation">:</span>
+                    island_sizes<span class="token punctuation">[</span>root<span class="token punctuation">]</span> <span class="token operator">+=</span> <span class="token number">1</span>
+                <span class="token keyword keyword-else">else</span><span class="token punctuation">:</span>
+                    island_sizes<span class="token punctuation">[</span>root<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+
+    <span class="token keyword keyword-return">return</span> <span class="token builtin">len</span><span class="token punctuation">(</span>root_set<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>island_sizes<span class="token punctuation">[</span>root<span class="token punctuation">]</span> <span class="token keyword keyword-for">for</span> root <span class="token keyword keyword-in">in</span> root_set<span class="token punctuation">]</span>  <span class="token comment"># Return number of islands and sizes</span>
+</code></pre><p>In the parallelized version of the <code>NumIslands</code> function, the algorithm shifts from a depth-first search (DFS) approach to a <strong>union-find (disjoint-set)</strong> strategy for identifying and counting islands. This method leverages Numba's <code>prange</code> to parallelize the process across rows, making it more efficient for large grid sizes.</p>
+<p>Instead of visiting neighboring land cells in a recursive manner, this algorithm unites connected land cells into the same "island" using the union-find structure. The grid is treated as a flattened 1D array, where each cell is initially its own parent. The union function merges connected land cells, and path compression is applied in the <code>find</code> function to optimize root identification. The parent-child relationships are adjusted as the algorithm iterates, allowing cells in the same island to share a common root.</p>
+<p>At the end of the process, the algorithm counts distinct root elements, which correspond to individual islands, and calculates the size of each island by summing the sizes of all cells connected to the same root. The result is returned as the total number of islands and a list of island sizes.</p>
+<p>Compared to the DFS approach, the parallel version distributes the workload across multiple cores, reducing the time required to process large grids. This method is highly scalable, especially for grid-based simulations with significant data.</p>
+<h4 id="find-function"><code>find</code> Function </h4>
+<pre data-role="codeBlock" data-info="PYTHON" class="language-python PYTHON"><code><span class="token decorator annotation punctuation">@njit</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">find</span><span class="token punctuation">(</span>parent<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-while">while</span> parent<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">!=</span> x<span class="token punctuation">:</span>
+        parent<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> parent<span class="token punctuation">[</span>parent<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">]</span>  <span class="token comment"># Path compression</span>
+        x <span class="token operator">=</span> parent<span class="token punctuation">[</span>x<span class="token punctuation">]</span>
+    <span class="token keyword keyword-return">return</span> x
+</code></pre><p>The <code>find</code> function is responsible for determining the root representative of a given cell in the union-find structure. It employs <strong>path compression</strong> to optimize the search process, making subsequent queries faster by updating the parent pointers of nodes along the path to the root. This function ensures that all connected components can be efficiently accessed and identified.</p>
+<h4 id="union-function"><code>union</code> Function </h4>
+<pre data-role="codeBlock" data-info="PYTHON" class="language-python PYTHON"><code><span class="token decorator annotation punctuation">@njit</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">union</span><span class="token punctuation">(</span>parent<span class="token punctuation">,</span> size<span class="token punctuation">,</span> rank<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    rootX <span class="token operator">=</span> find<span class="token punctuation">(</span>parent<span class="token punctuation">,</span> x<span class="token punctuation">)</span>
+    rootY <span class="token operator">=</span> find<span class="token punctuation">(</span>parent<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+    
+    <span class="token keyword keyword-if">if</span> rootX <span class="token operator">!=</span> rootY<span class="token punctuation">:</span>
+        <span class="token keyword keyword-if">if</span> rank<span class="token punctuation">[</span>rootX<span class="token punctuation">]</span> <span class="token operator">&gt;</span> rank<span class="token punctuation">[</span>rootY<span class="token punctuation">]</span><span class="token punctuation">:</span>
+            parent<span class="token punctuation">[</span>rootY<span class="token punctuation">]</span> <span class="token operator">=</span> rootX
+            size<span class="token punctuation">[</span>rootX<span class="token punctuation">]</span> <span class="token operator">+=</span> size<span class="token punctuation">[</span>rootY<span class="token punctuation">]</span>  <span class="token comment"># Update size of rootX</span>
+        <span class="token keyword keyword-elif">elif</span> rank<span class="token punctuation">[</span>rootX<span class="token punctuation">]</span> <span class="token operator">&lt;</span> rank<span class="token punctuation">[</span>rootY<span class="token punctuation">]</span><span class="token punctuation">:</span>
+            parent<span class="token punctuation">[</span>rootX<span class="token punctuation">]</span> <span class="token operator">=</span> rootY
+            size<span class="token punctuation">[</span>rootY<span class="token punctuation">]</span> <span class="token operator">+=</span> size<span class="token punctuation">[</span>rootX<span class="token punctuation">]</span>  <span class="token comment"># Update size of rootY</span>
+        <span class="token keyword keyword-else">else</span><span class="token punctuation">:</span>
+            parent<span class="token punctuation">[</span>rootY<span class="token punctuation">]</span> <span class="token operator">=</span> rootX
+            size<span class="token punctuation">[</span>rootX<span class="token punctuation">]</span> <span class="token operator">+=</span> size<span class="token punctuation">[</span>rootY<span class="token punctuation">]</span>  <span class="token comment"># Update size of rootX</span>
+            rank<span class="token punctuation">[</span>rootX<span class="token punctuation">]</span> <span class="token operator">+=</span> <span class="token number">1</span>
+</code></pre><p>The <code>union</code> function merges two distinct sets represented by their root cells. It first identifies the roots of both cells and then links them based on their ranks, which helps keep the tree structure flat and efficient. The size of the combined islands is updated accordingly to reflect the total number of connected land cells.</p>
+<p>These helper functions are integral to efficiently managing the relationships between cells and identifying connected components within the grid. Their optimized implementations significantly enhance the overall performance of the <code>num_islands_parallel</code> function.</p>
+<hr>
+<h1 id="used-algorithms">Used Algorithms </h1>
+<h2 id="depth-first-search-dfs-principle">Depth-First Search (DFS) Principle </h2>
+<p>Depth-First Search is a graph traversal algorithm that explores as far as possible along a branch before backtracking. It is particularly effective for problems like finding connected components in a grid. In this case, each land cell (<code>'1'</code>) can be seen as a node in a graph, and an edge exists between nodes that are directly adjacent (up, down, left, right).</p>
+<p>When DFS starts from a land cell, it recursively visits all reachable land cells, marking them as visited. Once all the cells in the connected component (or island) are explored, DFS backtracks, and the algorithm continues searching for the next unvisited land cell.</p>
+<h3 id="dfs-illustration">DFS Illustration </h3>
+<p>Let’s assume the following grid:</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>1 1 0 0 0
+1 0 0 1 1
+0 0 0 1 0
+1 0 1 0 1
+</code></pre><p>DFS starts at the first land cell (top-left corner):</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>█ 1 0 0 0
+█ 0 0 1 1
+0 0 0 1 0
+1 0 1 0 1
+</code></pre><p>It moves right and down to explore all connected land cells:</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>█ █ 0 0 0
+█ 0 0 1 1
+0 0 0 1 0
+1 0 1 0 1
+</code></pre><p>Once all reachable land cells are explored, it backtracks, marking the first island as fully explored. It will then start DFS from the next unvisited land cell to find the second island, and so on.</p>
+<hr>
+<h2 id="union-find-principle">Union-Find Principle </h2>
+<p>Union-Find, also known as Disjoint Set Union (DSU), is a data structure that efficiently keeps track of a partition of a set into disjoint subsets. It supports two primary operations: <strong>find</strong> and <strong>union</strong>. These operations enable efficient queries and modifications of the connected components in a graph, making Union-Find particularly effective for problems involving connectivity, such as counting islands in a grid.</p>
+<h3 id="find-operation">Find Operation </h3>
+<p>The <strong>find</strong> operation determines the root representative of a particular element. It identifies which subset a particular element belongs to and can be optimized using <strong>path compression</strong>, which flattens the structure of the tree whenever <code>find</code> is called. This optimization reduces the time complexity of future queries by keeping the tree as flat as possible.</p>
+<h3 id="union-operation">Union Operation </h3>
+<p>The <strong>union</strong> operation merges two subsets into a single subset. It connects two elements and ensures that they share the same root. Union-Find employs a <strong>rank</strong> heuristic to keep the tree shallow by always attaching the smaller tree under the root of the larger tree. This approach minimizes the height of the trees, leading to more efficient operations.</p>
+<h3 id="union-find-illustration">Union-Find Illustration </h3>
+<p>Consider the following scenario with a grid of land cells represented as follows:</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>1 1 0 0 0
+1 0 0 1 1
+0 0 0 1 0
+1 0 1 0 1
+</code></pre><p>Initially, each land cell is its own parent, represented by indices corresponding to their positions in the grid:</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>[0, 1, 2, 3, 4]
+[5, 6, 7, 8, 9]
+[10, 11, 12, 13, 14]
+[15, 16, 17, 18, 19]
+</code></pre><h3 id="first-iteration-union-operations">First Iteration: Union Operations </h3>
+<ol>
+<li>
+<p><strong>Processing Cell (0, 0)</strong>:</p>
+<ul>
+<li>Current cell value: <code>1</code> (land).</li>
+<li>Union with its neighbor <code>(0, 1)</code> (also <code>1</code>).</li>
+<li>Perform union: <code>union(parent, size, rank, 0, 1)</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Current Parent Structure After Union</strong>:</p>
+<ul>
+<li>Cell (0, 0) and Cell (0, 1) are now connected. We update the parent of cell <code>(0, 1)</code> to point to <code>(0, 0)</code>.</li>
+</ul>
+<p><strong>Parents after first union:</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Parent:  [0, 0, 2, 3, 4]
+          [5, 6, 7, 8, 9]
+          [10, 11, 12, 13, 14]
+          [15, 16, 17, 18, 19]
+</code></pre></li>
+<li>
+<p><strong>Union with Cell (1, 0)</strong>:</p>
+<ul>
+<li>Current cell value: <code>1</code> (land).</li>
+<li>Perform union: <code>union(parent, size, rank, 0, 5)</code> (connecting to the cell below).</li>
+</ul>
+<p><strong>Parents after second union:</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Parent:  [0, 0, 2, 3, 4]
+          [0, 6, 7, 8, 9]
+          [10, 11, 12, 13, 14]
+          [15, 16, 17, 18, 19]
+</code></pre></li>
+</ol>
+<h3 id="result-after-first-iteration">Result After First Iteration </h3>
+<p>At the end of the first iteration (processing the first row), the parent structure shows that cells <code>(0, 0)</code>, <code>(0, 1)</code>, and <code>(1, 0)</code> are all connected through their common root <code>(0, 0)</code>. The grid is evolving, forming one connected component (island) in the upper left part of the grid. As we continue iterating through the rest of the grid, further union operations will merge additional components.</p>
+<p>The Union-Find structure allows us to quickly identify the roots and connected components in the grid, facilitating efficient counting of distinct islands.</p>
+<p>In summary, Union-Find is a powerful algorithm for managing dynamic connectivity and efficiently handling problems that require the identification of connected components in a graph or grid.</p>
+<h3 id="parallelization-of-union-find">Parallelization of Union-Find </h3>
+<p>Parallelizing the Union-Find algorithm can significantly enhance performance, especially for large datasets where connectivity checks and unions are frequent. The main challenge in parallelizing Union-Find lies in the need to maintain consistency in the data structure while multiple threads perform operations simultaneously. Here’s how the method can be parallelized effectively:</p>
+<h4 id="parallel-union-find-strategy">Parallel Union-Find Strategy </h4>
+<ol>
+<li>
+<p><strong>Initial Setup</strong>:</p>
+<ul>
+<li>Each thread can independently initialize its own local Union-Find structure to represent the grid, where each land cell is its own parent. This initialization can occur in parallel without any conflicts since it involves writing to separate memory locations.</li>
+</ul>
+</li>
+<li>
+<p><strong>Concurrent Union Operations</strong>:</p>
+<ul>
+<li>While processing the grid, each thread can perform union operations for the cells it processes in parallel. For example, if a thread encounters a land cell that connects to its neighboring land cells, it can execute the union operation independently.</li>
+</ul>
+</li>
+<li>
+<p><strong>Handling Shared Data</strong>:</p>
+<ul>
+<li>To avoid race conditions when multiple threads perform union operations on the same cells, we can use atomic operations or locks:
+<ul>
+<li><strong>Atomic Operations</strong>: Use atomic functions for the union to ensure that only one thread can modify the parent array at a time for a given cell.</li>
+<li><strong>Locking</strong>: Use mutex locks to protect the union operation. However, excessive locking can lead to contention and reduce the benefits of parallelization.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Path Compression and Rank Management</strong>:</p>
+<ul>
+<li>Path compression and rank management should still be performed, but with care to ensure that they do not introduce inconsistencies:
+<ul>
+<li>Path compression can be performed after the union operations are complete, or threads can locally compress paths and update the parent array at the end of their operations to reduce conflicts.</li>
+<li>Ranks can also be managed with care to ensure that merges are consistent across threads.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>By carefully managing the union operations and using parallel processing features provided by libraries like Numba, Union-Find can be effectively parallelized. This parallelization can lead to significant performance gains, particularly when processing large grids with many land cells. However, developers need to be cautious about data consistency and thread safety to avoid potential pitfalls associated with concurrent data access.</p>
+<hr>
+<h1 id="known-bugs-and-limitations">Known Bugs and Limitations </h1>
+<h2 id="fill-ration-error">Fill ration error </h2>
+<p>There is an inconsistency in the DFS implementation, where the number of cells per islands seems to be wrong. Thus we recommend using the parallelized version of the code.</p>
+<h2 id="deposition-spots">Deposition spots </h2>
+<p>Deposition doesn't check whether a monomer is already present somewhere. This could potentially lead to issues, however we haven't change the implementation. One way to do it would be to create a list of all available positions in th grid and randomly pull one.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
